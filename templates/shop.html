@@ -1,0 +1,1903 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Надійні рішення з металу" />
+    <title>Надійні рішення з металу</title>
+    <!-- Bootstrap CSS for responsive design and styling -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- Custom fonts for typography -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Tektur&family=Commissioner&family=Montserrat:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome for icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <!-- Custom styles -->
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='shop/css/style.css') }}"
+    />
+    <style>
+      .hidden {
+        display: none !important;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Modal for Order Form -->
+    <div class="modal-overlay" id="orderFormModal">
+      <div class="modal-container modal-lg">
+        <div class="modal-content modal-body">
+          <a href="#" class="modal-close">
+            <img
+              src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTE4IDZMNiAxOCIgc3Ryb2tlPSJ3aGl0ZSIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz4KPHBhdGggZD0iTTYgNkwxOCAxOCIgc3Ryb2tlPSJ3aGl0ZSIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz4KPC9zdmc+"
+            />
+          </a>
+          <div class="contact-form-container">
+            <h3 class="form-title">
+              Залиште заявку — ми зв'яжемось з вами найближчим часом
+            </h3>
+            <form class="contact-form">
+              <div class="form-group">
+                <label for="name"
+                  ><i class="fa-regular fa-user icon-form"></i
+                ></label>
+                <input type="text" id="name" placeholder="Ім'я" required />
+              </div>
+              <div class="form-group">
+                <label for="phone"
+                  ><i class="fa-solid fa-phone icon-form"></i
+                ></label>
+                <input type="tel" id="phone" placeholder="Телефон" required />
+              </div>
+              <button type="submit" class="btn btn-primary">Надіслати</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Modal for Пелетна лінія -->
+    <div class="modal-overlay" id="pelletLineModal">
+      <div class="modal-container modal-lg">
+        <div class="modal-content modal-body">
+          <a href="#" class="modal-close">
+            <img
+              src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTE4IDZMNiAxOCIgc3Ryb2tlPSJ3aGl0ZSIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz4KPHBhdGggZD0iTTYgNkwxOCAxOCIgc3Ryb2tlPSJ3aGl0ZSIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz4KPC9zdmc+"
+            />
+          </a>
+          <div class="image-div">
+            <div class="product-images">
+              <div class="product-image-container">
+                <img
+                  src="{{ url_for('static', filename='shop/images/details/pellet_line_image1.png') }}"
+                />
+              </div>
+              <div class="product-image-container">
+                <img
+                  src="{{ url_for('static', filename='shop/images/details/pellet_line_image2.png') }}"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="text-div">
+            <div class="product-description">
+              <p>Пелетна лінія</p>
+              <p>
+                Лінія для виробництва паливних пелетів з відходів деревини та
+                с/г відходів фракцією до 5 мм (тирса), продуктивністю до 300
+                кг/год.
+              </p>
+              <h3>Технічні характеристики:</h3>
+              <ul>
+                <li>Продуктивність, до 300 кг/год</li>
+                <li>Потужність, 45-кВт</li>
+                <li>Габарити Д-8500,Ш-5000, В-3700</li>
+                <li>Вага, кг. 2200</li>
+                <li>Витрати дров на тонну брикету, куб/т - 0,7;</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal-overlay" id="conveyorJointModal">
+      <div class="modal-container modal-lg">
+        <div class="modal-content modal-body">
+          <a href="#" class="modal-close">
+            <img
+              src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTE4IDZMNiAxOCIgc3Ryb2tlPSJ3aGl0ZSIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz4KPHBhdGggZD0iTTYgNkwxOCAxOCIgc3Ryb2tlPSJ3aGl0ZSIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz4KPC9zdmc+"
+            />
+          </a>
+          <div class="image-div">
+            <div class="product-images">
+              <div class="product-image-container">
+                <img
+                  src="{{ url_for('static', filename='shop/images/details/conveyor_joint_image1.png') }}"
+                />
+              </div>
+              <div class="product-image-container">
+                <img
+                  src="{{ url_for('static', filename='shop/images/details/conveyor_joint_image2.png') }}"
+                />
+              </div>
+              <div class="product-image-container">
+                <img
+                  src="{{ url_for('static', filename='shop/images/details/conveyor_joint_image3.png') }}"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="text-div">
+            <div class="product-description">
+              <p>Зєднання конвеєрних рештаків вугільних шахт</p>
+              <p>
+                1. Забезпечується повна надійність з'єднання залишків
+                конвеєрного ставу між собою, завдяки чому гарантується сталість
+                максимально можливої ​​при даному вугіллі падіння пласта
+                продуктивності конвеєра.
+              </p>
+              <p>
+                2. Після складання рештаків у процесі роботи конвеєра потреба в
+                періодичній підтяжці болтів від- про Втрата болтів, гайок та їх
+                самовідгвинчування під час роботи конвеєрних рештаків є дуже
+                істотним фактором, що ускладнює експлоатацію конвеєрів, що
+                коливаються. Для усунення цих недоліків у пропонованому
+                болтовому з'єднанні конвеєрних рештаків головка болта виконана у
+                вигляді гачка, вільно проходить у довгастий отвір вуха рештака,
+                з тією метою, щоб після повороту болта його гайку можна було
+                скріпити зі щитком провушини і з'єднувати.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal-overlay" id="SteelStove">
+      <div class="modal-container modal-lg">
+        <div class="modal-content modal-body">
+          <a href="#" class="modal-close">
+            <img
+              src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTE4IDZMNiAxOCIgc3Ryb2tlPSJ3aGl0ZSIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz4KPHBhdGggZD0iTTYgNkwxOCAxOCIgc3Ryb2tlPSJ3aGl0ZSIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz4KPC9zdmc+"
+            />
+          </a>
+          <div class="image-div">
+            <div class="product-images">
+              <div class="product-image-container">
+                <img
+                  src="{{ url_for('static', filename='shop/images/details/steel_stove_image1.png') }}"
+                />
+              </div>
+              <div class="product-image-container">
+                <img
+                  src="{{ url_for('static', filename='shop/images/details/steel_stove_image2.png') }}"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="text-div">
+            <div class="product-description">
+              <p>
+                Стальна піч для опалення в приміщенні та функцією приготуванні
+                їжі. Буржуйка виконана з металу товщиною 2 мм, та має вагу 12 кг
+                (без футеровки вогнетривкою цеглою). На верхній панелі
+                розташована одна конфорка на якій зручно варити їжу. Горіння
+                дров відбуівається на колосникові з ВЧ-45 (високоміцний чугун)
+              </p>
+              <h3>Переваги буржуйки тривалого горіння:</h3>
+              <ul>
+                <li>
+                  топкова камера розділена спеціальною пластиною на дві частини
+                  – подовжений шлях диму, що сприяє тривалішому горінню і
+                  збільшує тепловіддачу
+                </li>
+                <li>наявність варильної поверхні з однією конфоркою</li>
+                <li>
+                  регулювання інтенсивності горіння (надходження повітря в
+                  топку)
+                </li>
+                <li>наявності заслінки-регулятора на патрубку димоходу</li>
+                <li>компактні розміри печі</li>
+                <li>збірка печі суцільними зварними швами всередині печі</li>
+                <li>
+                  щільно прилягає до корпусу завантажувальні дверцята із зручним
+                  засовом
+                </li>
+                <li>
+                  стійкі ніжки, які піднімають піч від підлоги і сприяють
+                  конвекції
+                </li>
+                <li>сучасний зовнішній вигляд</li>
+              </ul>
+              <h3>Основні технічні характеристики:</h3>
+              <ul>
+                <li>Габаритні розміри ВхШхГ - 600х290х450, мм</li>
+                <li>Висота з патрубком - 670 мм</li>
+                <li>Потужність - 7 кВт</li>
+                <li>ККД - 80%</li>
+                <li>Підключення до димаря - верхнє</li>
+                <li>Діаметр патрубка - 116 мм</li>
+                <li>Об'єм опалювального приміщення - 72 м3</li>
+                <li>Об'єм топки - 0,25 м3</li>
+                <li>Метал - 2 мм. Дверцята - 3мм</li>
+                <li>Вага - 12 кг (без вогнетривкої цегли)</li>
+                <li>Країна виробник - Україна</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal-overlay" id="barbell25kgModal">
+      <div class="modal-container modal-lg">
+        <div class="modal-content modal-body">
+          <a href="#" class="modal-close">
+            <img
+              src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTE4IDZMNiAxOCIgc3Ryb2tlPSJ3aGl0ZSIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz4KPHBhdGggZD0iTTYgNkwxOCAxOCIgc3Ryb2tlPSJ3aGl0ZSIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz4KPC9zdmc+"
+            />
+          </a>
+          <div class="image-div">
+            <div class="product-images">
+              <div class="product-image-container">
+                <img
+                  src="{{ url_for('static', filename='shop/images/details/barbell/barbell_25kg_image1.png') }}"
+                />
+              </div>
+              <div class="product-image-container">
+                <img
+                  src="{{ url_for('static', filename='shop/images/details/barbell/barbell_25kg_image2.png') }}"
+                />
+              </div>
+              <div class="product-image-container">
+                <img
+                  src="{{ url_for('static', filename='shop/images/details/barbell/barbell_25kg_image3.png') }}"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="text-div">
+            <div class="product-description">
+              <p>
+                Диски для штанги виготовлені зі сталі 25кг посадковий діаметр
+                52мм/31мм
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal-overlay" id="barbell20kgModal">
+      <div class="modal-container modal-lg">
+        <div class="modal-content modal-body">
+          <a href="#" class="modal-close">
+            <img
+              src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTE4IDZMNiAxOCIgc3Ryb2tlPSJ3aGl0ZSIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz4KPHBhdGggZD0iTTYgNkwxOCAxOCIgc3Ryb2tlPSJ3aGl0ZSIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz4KPC9zdmc+"
+            />
+          </a>
+          <div class="image-div">
+            <div class="product-images">
+              <div class="product-image-container">
+                <img
+                  src="{{ url_for('static', filename='shop/images/details/barbell/barbell_20kg_image1.png') }}"
+                />
+              </div>
+              <div class="product-image-container">
+                <img
+                  src="{{ url_for('static', filename='shop/images/details/barbell/barbell_20kg_image2.png') }}"
+                />
+              </div>
+              <div class="product-image-container">
+                <img
+                  src="{{ url_for('static', filename='shop/images/details/barbell/barbell_20kg_image3.png') }}"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="text-div">
+            <div class="product-description">
+              <p>
+                Диски  для  штанги  виготовлені  зі  сталі 20кг посадковий
+                діаметр 52мм/31мм
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal-overlay" id="barbell15kgModal">
+      <div class="modal-container modal-lg">
+        <div class="modal-content modal-body">
+          <a href="#" class="modal-close">
+            <img
+              src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTE4IDZMNiAxOCIgc3Ryb2tlPSJ3aGl0ZSIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz4KPHBhdGggZD0iTTYgNkwxOCAxOCIgc3Ryb2tlPSJ3aGl0ZSIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz4KPC9zdmc+"
+            />
+          </a>
+          <div class="image-div">
+            <div class="product-images">
+              <div class="product-image-container">
+                <img
+                  src="{{ url_for('static', filename='shop/images/details/barbell/barbell_15kg_image1.png') }}"
+                />
+              </div>
+              <div class="product-image-container">
+                <img
+                  src="{{ url_for('static', filename='shop/images/details/barbell/barbell_15kg_image2.png') }}"
+                />
+              </div>
+              <div class="product-image-container">
+                <img
+                  src="{{ url_for('static', filename='shop/images/details/barbell/barbell_15kg_image3.png') }}"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="text-div">
+            <div class="product-description">
+              <p>
+                Диски для штанги виготовлені зі cталі 15кг посадковий діаметр
+                52мм/31мм
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal-overlay" id="barbell10kgModal">
+      <div class="modal-container modal-lg">
+        <div class="modal-content modal-body">
+          <a href="#" class="modal-close">
+            <img
+              src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTE4IDZMNiAxOCIgc3Ryb2tlPSJ3aGl0ZSIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz4KPHBhdGggZD0iTTYgNkwxOCAxOCIgc3Ryb2tlPSJ3aGl0ZSIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz4KPC9zdmc+"
+            />
+          </a>
+          <div class="image-div">
+            <div class="product-images">
+              <div class="product-image-container">
+                <img
+                  src="{{ url_for('static', filename='shop/images/details/barbell/barbell_10kg_image1.png') }}"
+                />
+              </div>
+              <div class="product-image-container">
+                <img
+                  src="{{ url_for('static', filename='shop/images/details/barbell/barbell_10kg_image2.png') }}"
+                />
+              </div>
+              <div class="product-image-container">
+                <img
+                  src="{{ url_for('static', filename='shop/images/details/barbell/barbell_10kg_image3.png') }}"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="text-div">
+            <div class="product-description">
+              <p>
+                Диски для штанги виготовлені зі cталі 10кг посадковий діаметр
+                52мм/31мм
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal-overlay" id="barbell5kgModal">
+      <div class="modal-container modal-lg">
+        <div class="modal-content modal-body">
+          <a href="#" class="modal-close">
+            <img
+              src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTE4IDZMNiAxOCIgc3Ryb2tlPSJ3aGl0ZSIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz4KPHBhdGggZD0iTTYgNkwxOCAxOCIgc3Ryb2tlPSJ3aGl0ZSIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz4KPC9zdmc+"
+            />
+          </a>
+          <div class="image-div">
+            <div class="product-images">
+              <div class="product-image-container">
+                <img
+                  src="{{ url_for('static', filename='shop/images/details/barbell/barbell_5kg_image1.png') }}"
+                />
+              </div>
+              <div class="product-image-container">
+                <img
+                  src="{{ url_for('static', filename='shop/images/details/barbell/barbell_5kg_image2.png') }}"
+                />
+              </div>
+              <div class="product-image-container">
+                <img
+                  src="{{ url_for('static', filename='shop/images/details/barbell/barbell_5kg_image3.png') }}"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="text-div">
+            <div class="product-description">
+              <p>
+                Диски для штанги виготовлені зі cталі 5кг посадковий діаметр
+                52мм/31мм
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal-overlay" id="kolosnikichavunni">
+      <div class="modal-container modal-lg">
+        <div class="modal-content modal-body">
+          <a href="#" class="modal-close">
+            <img
+              src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTE4IDZMNiAxOCIgc3Ryb2tlPSJ3aGl0ZSIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz4KPHBhdGggZD0iTTYgNkwxOCAxOCIgc3Ryb2tlPSJ3aGl0ZSIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz4KPC9zdmc+"
+            />
+          </a>
+          <div class="image-div">
+            <div class="product-images">
+              <div class="product-image-container">
+                <img
+                  src="{{ url_for('static', filename='shop/images/details/kolosniki_chavunni_image1.png') }}"
+                />
+              </div>
+              <div class="product-image-container">
+                <img
+                  src="{{ url_for('static', filename='shop/images/details/kolosniki_chavunni_image3.png') }}"
+                />
+              </div>
+              <div class="product-image-container">
+                <img
+                  src="{{ url_for('static', filename='shop/images/details/kolosniki_chavunni_image2.png') }}"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="text-div">
+            <div class="product-description">
+              <p>Колосники чавунні</p>
+              <p>
+                Колосники промислові вилиті з ВЧ (високоміцний чавун) — чавунні
+                грати в печах для проходу повітря під паливо та виходу золи з
+                топки. і слугують для підтримки шару твердого палива, що горить
+                і відсіву згорілого вугілля в зольник. Для підведення повітря до
+                шару палива. Колосники встановлюються на спеціальні уступи у
+                бокових стінках топки котла над зольником.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal-overlay" id="dvoopornyypidshipnikovyyvuzol">
+      <div class="modal-container modal-lg">
+        <div class="modal-content modal-body">
+          <a href="#" class="modal-close">
+            <img
+              src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTE4IDZMNiAxOCIgc3Ryb2tlPSJ3aGl0ZSIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz4KPHBhdGggZD0iTTYgNkwxOCAxOCIgc3Ryb2tlPSJ3aGl0ZSIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz4KPC9zdmc+"
+            />
+          </a>
+          <div class="image-div">
+            <div class="product-images">
+              <div class="product-image-container">
+                <img
+                  src="{{ url_for('static', filename='shop/images/details/dvoopornyy_pidshipnikovyy_vuzol_image1.png') }}"
+                />
+              </div>
+              <div class="product-image-container">
+                <img
+                  src="{{ url_for('static', filename='shop/images/details/dvoopornyy_pidshipnikovyy_vuzol_image2.png') }}"
+                />
+              </div>
+              <div class="product-image-container">
+                <img
+                  src="{{ url_for('static', filename='shop/images/details/dvoopornyy_pidshipnikovyy_vuzol_image3.png') }}"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="text-div">
+            <div class="product-description">
+              <p>Двоопірний підшипниковий вузол</p>
+              <p>
+                Двоопорний підшипниковий вузол складається з двох
+                самовстановлюваних шарикопідшипників або сферичних
+                роликопідшипників, вмонтованих в окремі корпуси. Спочатку така
+                конструкція вузла розроблялася як опора вентилятора з навісною
+                крильчаткою, але також успішно застосовуються в механізмах з
+                аналогічним розташуванням валів - циркулярних пилах, у
+                відцентрових насосах, шпиндельних вузлах та ін.
+              </p>
+              <h3>
+                Конструкція двоопорного підшипникового вузла має ряд переваг в
+                порівнянні зі стандартаним вузлом:
+              </h3>
+              <ul>
+                <li>
+                  точніше обертання через використання жорстких підшипників;
+                </li>
+                <li>низький рівень шуму при роботі вузла;</li>
+                <li>забезпечення роботи при великих осьових навантаженнях;</li>
+                <li>компактніша конструкція;</li>
+                <li>простота монтажу;</li>
+                <li>
+                  виключена неспіввісність підшипників - результат одночасної
+                  обробки посадкових місць під них в корпусах.
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal for GE-9000 TBH RENTAL -->
+    <div class="modal-overlay" id="ge9000">
+      <div class="modal-container modal-lg">
+        <div class="modal-content modal-body">
+          <a href="#" class="modal-close">
+            <img
+              src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTE4IDZMNiAxOCIgc3Ryb2tlPSJ3aGl0ZSIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz4KPHBhdGggZD0iTTYgNkwxOCAxOCIgc3Ryb2tlPSJ3aGl0ZSIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz4KPC9zdmc+"
+            />
+          </a>
+          <div class="image-div">
+            <div class="product-images">
+              <div class="product-image-container">
+                <img
+                  src="{{ url_for('static', filename='shop/images/details/ge/ge9000_image1.png') }}"
+                />
+              </div>
+              <div class="product-image-container">
+                <img
+                  src="{{ url_for('static', filename='shop/images/details/ge/ge9000_image2.png') }}"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="text-div">
+            <div class="product-description">
+              <p>GE-9000 TBH RENTAL</p>
+              <h3>Характеристика:</h3>
+              <ul>
+                <li>Виробник: Италия</li>
+                <li>Двигун: Бензиновий</li>
+                <li>Марка/модель: HONDA модель GX-390</li>
+                <li>Потужність: 10,3 л.с. (7,5 кВт)</li>
+                <li>Запуск: Ручной, с обмотки.</li>
+                <li>Трехфазная генерація: 8,5 кВА / 8500 Вт / 12,3 А</li>
+                <li>Однофазная генерація: 3,4 кВА / 3400 Вт / 14,7 А</li>
+                <li>Размір Д х Ш х В: 770 х 520 х 520 мм</li>
+                <li>Вага: 87 кг</li>
+              </ul>
+              <h3>Колеса:</h3>
+              <p>
+                Модель адаптована до поточних норм викидів Stage 5. Правила
+                Stage V обмежують межі викидів частинок, зменшуючи кількість
+                допустимих PM на 40% і додаючи обмеження на кількість частинок,
+                що викидаються.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal for GE-9000 RENT -->
+    <div class="modal-overlay" id="ge9000rent">
+      <div class="modal-container modal-lg">
+        <div class="modal-content modal-body">
+          <a href="#" class="modal-close">
+            <img
+              src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTE4IDZMNiAxOCIgc3Ryb2tlPSJ3aGl0ZSIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz4KPHBhdGggZD0iTTYgNkwxOCAxOCIgc3Ryb2tlPSJ3aGl0ZSIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz4KPC9zdmc+"
+            />
+          </a>
+          <div class="image-div">
+            <div class="product-images">
+              <div class="product-image-container">
+                <img
+                  src="{{ url_for('static', filename='shop/images/details/ge/ge9000_image1.png') }}"
+                />
+              </div>
+              <div class="product-image-container">
+                <img
+                  src="{{ url_for('static', filename='shop/images/details/ge/ge9000_image2.png') }}"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="text-div">
+            <div class="product-description">
+              <p>GE-9000 TBH RENTAL</p>
+              <h3>Характеристика:</h3>
+              <ul>
+                <li>Виробник: Италия</li>
+                <li>Двигун: Бензиновий</li>
+                <li>Марка/модель: HONDA модель GX-390</li>
+                <li>Потужність: 10,3 л.с. (7,5 кВт)</li>
+                <li>Запуск: Ручной, с обмотки.</li>
+                <li>Трехфазная генерація: 8,5 кВА / 8500 Вт / 12,3 А</li>
+                <li>Однофазная генерація: 3,4 кВА / 3400 Вт / 14,7 А</li>
+                <li>Размір Д х Ш х В: 770 х 520 х 520 мм</li>
+                <li>Вага: 87 кг</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal for GE-7500 MBH RENTAL -->
+    <div class="modal-overlay" id="ge7500">
+      <div class="modal-container modal-lg">
+        <div class="modal-content modal-body">
+          <a href="#" class="modal-close">
+            <img
+              src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTE4IDZMNiAxOCIgc3Ryb2tlPSJ3aGl0ZSIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz4KPHBhdGggZD0iTTYgNkwxOCAxOCIgc3Ryb2tlPSJ3aGl0ZSIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz4KPC9zdmc+"
+            />
+          </a>
+          <div class="image-div">
+            <div class="product-images">
+              <div class="product-image-container">
+                <img
+                  src="{{ url_for('static', filename='shop/images/details/ge/ge9000_image1.png') }}"
+                />
+              </div>
+              <div class="product-image-container">
+                <img
+                  src="{{ url_for('static', filename='shop/images/details/ge/ge9000_image2.png') }}"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="text-div">
+            <div class="product-description">
+              <p>GE-7500 MBH RENTAL</p>
+              <h3>Характеристика:</h3>
+              <ul>
+                <li>Виробник: Италия</li>
+                <li>Двигун: Бензиновий</li>
+                <li>Марка/модель: HONDA модель GX-390</li>
+                <li>Потужність: 10,3 л.с. (7,5 кВт)</li>
+                <li>Запуск: Ручной, с обмотки.</li>
+                <li>Однофазная генерація: 7 кВА / 7000 Вт / 30,4 А</li>
+                <li>Размір Д х Ш х В: 770 х 520 х 520 мм</li>
+                <li>Вага: 87 кг</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal for GE-4500Mi -->
+    <div class="modal-overlay" id="ge4500mi">
+      <div class="modal-container modal-lg">
+        <div class="modal-content modal-body">
+          <a href="#" class="modal-close">
+            <img
+              src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTE4IDZMNiAxOCIgc3Ryb2tlPSJ3aGl0ZSIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz4KPHBhdGggZD0iTTYgNkwxOCAxOCIgc3Ryb2tlPSJ3aGl0ZSIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz4KPC9zdmc+"
+            />
+          </a>
+          <div class="image-div">
+            <div class="product-images">
+              <div class="product-image-container">
+                <img
+                  src="{{ url_for('static', filename='shop/images/details/ge/ge4500mi_image1.png') }}"
+                />
+              </div>
+              <div class="product-image-container">
+                <img
+                  src="{{ url_for('static', filename='shop/images/details/ge/ge4500mi_image2.png') }}"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="text-div">
+            <div class="product-description">
+              <p>GE 4500MI INVECTOR</p>
+              <p>
+                Частота 50 Гц - генератор змінного струму з постійними магнітами
+                - безщітковий
+              </p>
+              <ul>
+                <li>
+                  Однофазна потужність у режимі очікування:  4,2 кВт / 230 В /
+                  18,3 А
+                </li>
+                <li>Однофазна ротужність ПРП:  3,8 кВт/230 В/16,5 А </li>
+                <li>Заряд батареи: 12 В / 5 А</li>
+              </ul>
+              <h3>Основна Характеристика:</h3>
+              <ul>
+                <li>Виробник: Італия</li>
+                <li>Автоматичний регулятор напруги</li>
+                <li>
+                  Двигун вимикається через низький рівень масла (оповіщення про
+                  мастило)
+                </li>
+                <li>Розетки: 2x 230В 16A 2P + T Schuko</li>
+                <li>При перевантаженні вимикається</li>
+                <li>Зарядне устройство с защитой</li>
+                <li>2 порта USB (1x5V1A - 1x5V 2.1A)</li>
+                <li>Комплект паралельного з'єднувача (додатково)</li>
+                <li>Вмістимість бака: 12 л</li>
+                <li>Розмір:  605 х 493 х 432 мм</li>
+                <li>Суха вага: 42 кг</li>
+                <li>Акустична потужність LwA:  66,8 дБ(А) на расстоянии 7 м</li>
+                <li>Ручний транспорт із висувною ручкою</li>
+                <li>Цена: 80 000 грн (1920 Эвро).</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal for GE-SX-18000 KDT -->
+    <div class="modal-overlay" id="gesx18000">
+      <div class="modal-container modal-lg">
+        <div class="modal-content modal-body">
+          <a href="#" class="modal-close">
+            <img
+              src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTE4IDZMNiAxOCIgc3Ryb2tlPSJ3aGl0ZSIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz4KPHBhdGggZD0iTTYgNkwxOCAxOCIgc3Ryb2tlPSJ3aGl0ZSIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz4KPC9zdmc+"
+            />
+          </a>
+          <div class="image-div">
+            <div class="product-images">
+              <div class="product-image-container">
+                <img
+                  src="{{ url_for('static', filename='shop/images/details/ge/ge_sx_18000_image1.png') }}"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="text-div">
+            <div class="product-description">
+              <p>GE-SX-18000 KDT</p>
+              <p>Дизельний генератор 3000 об/мин SX</p>
+              <h3>Характеристики:</h3>
+              <ul>
+                <li>Виробник: Італия</li>
+                <li>Двигун: Дизельний</li>
+                <li>Марка/модель: KOHLER KDW1003</li>
+                <li>Потужність двигуна: 23,3 к.с. (17,15 кВт)</li>
+                <li>Запуск: Електричний</li>
+                <li>
+                  Резервна трифазна потужність: 18 кВА (14,4 кВт) / 400 В / 26 А
+                </li>
+                <li>
+                  Номінальна трифазна потужність (PRP): 16,5 кВА (13,2 кВт) /
+                  400 В / 23,8 А
+                </li>
+                <li>
+                  Номінальна однофазна потужність (PRP): 9 кВА / 230 В / 39,1 А
+                </li>
+                <li>Розміри (Д х Ш х В): 1650 x 710 x 931 мм</li>
+                <li>Вага: 372 кг</li>
+              </ul>
+              <p>
+                Модель адаптована до поточних норм викидів Stage 5. Правила
+                Stage V обмежують межі викидів частинок, зменшуючи кількість
+                допустимих PM на 40% та додаючи обмеження на кількість частинок,
+                що викидаються.
+              </p>
+              <p>Ціна: 464 800 грн (11 200 євро)</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal for GE-6900 -->
+    <div class="modal-overlay" id="ge6900">
+      <div class="modal-container modal-lg">
+        <div class="modal-content modal-body">
+          <a href="#" class="modal-close">
+            <img
+              src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTE4IDZMNiAxOCIgc3Ryb2tlPSJ3aGl0ZSIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz4KPHBhdGggZD0iTTYgNkwxOCAxOCIgc3Ryb2tlPSJ3aGl0ZSIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz4KPC9zdmc+"
+            />
+          </a>
+          <div class="image-div">
+            <div class="product-images">
+              <div class="product-image-container">
+                <img
+                  src="{{ url_for('static', filename='shop/images/details/ge/ge6900_image1.png') }}"
+                />
+              </div>
+              <div class="product-image-container">
+                <img
+                  src="{{ url_for('static', filename='shop/images/details/ge/ge6900_image2.png') }}"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="text-div">
+            <div class="product-description">
+              <p>GE 6900</p>
+              <p>
+                Однофазний генератор GE 6900 потужністю 6.5 кВт від італійського
+                бренду MOSA оснащений бензиновим 4х тактним двигуном з
+                повітряним охолодженням GK 420. Характеристики:Однофазное
+                пиковая мощность: 6,5 кВА/кВт / 230В/ 28,3А
+              </p>
+              <ul>
+                <li>
+                  Однофазна номинальна потужність PRP: 6 кВА/кВт / 230В/26А
+                </li>
+                <li>Частота: 50 Гц</li>
+                <li>Вмістимість топливного бака: 20 л</li>
+                <li>Обьем мастила в картере — 1,1 л.</li>
+                <li>
+                  Акустическая потужність LwA (давление LpA): 99 дБ(A) (74 дБ(A)
+                  на расстоянии 7м)
+                </li>
+                <li>Суха вага: 80 кг</li>
+                <li>Вимкнення двигуна при низькому рівні масла</li>
+                <li>Електронне автоматичне регулювання напруги «AVR»</li>
+                <li>1x230V 32A 2P+T CEE - 2x230V 16A 2P+T розетки Schuko</li>
+                <li>Тепловий захист від навантаження</li>
+                <li>
+                  Зарядний пристрій 12 В постійного струму (для акумулятора
+                </li>
+                <li>Захисна рама</li>
+                <li>Ручний буксирувальний візок</li>
+                <li>Знижений рівень шуму</li>
+                <li>Портативний - легко транспортується</li>
+                <li>Відповідає директивам ЄС/ЄС</li>
+              </ul>
+              <p>Ціна продажу: 60 000 грн (1440 євро).</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal-overlay" id="budivelnipobutivky">
+      <div class="modal-container modal-lg">
+        <div class="modal-content modal-body">
+          <a href="#" class="modal-close">
+            <img
+              src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTE4IDZMNiAxOCIgc3Ryb2tlPSJ3aGl0ZSIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz4KPHBhdGggZD0iTTYgNkwxOCAxOCIgc3Ryb2tlPSJ3aGl0ZSIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz4KPC9zdmc+"
+            />
+          </a>
+          <div class="image-div">
+            <div class="product-images">
+              <div class="product-image-container">
+                <img
+                  src="{{ url_for('static', filename='shop/images/details/budivelnipobutivky_image1.png') }}"
+                />
+              </div>
+              <div class="product-image-container">
+                <img
+                  src="{{ url_for('static', filename='shop/images/details/budivelnipobutivky_image2.png') }}"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="text-div">
+            <div class="product-description">
+              <p>Будівельні побутівки</p>
+              <p>
+                Шукаєте надійне тимчасове приміщення для будівництва, охорони,
+                складу або мобільного офісу? Компанія пропонує великий вибір
+                будівельних побутівок для різних потреб – як в оренду, так і для
+                продажу.
+              </p>
+              <p>
+                Наші побутівки — це зручні, утеплені конструкції, які
+                забезпечують комфортні умови для роботи та відпочинку персоналу
+                на будь-якому об’єкті. Вони легко транспортуються, швидко
+                встановлюються та можуть бути укомплектовані всім необхідним —
+                меблями, освітленням, кондиціонуванням та іншим обладнанням.
+              </p>
+              <h3>Ми пропонуємо побутівки для таких цілей:</h3>
+              <ul>
+                <li>будівельні роботи (житло для робітників);</li>
+                <li>прорабські та мобільні офіси;</li>
+                <li>роздягальні та душові;</li>
+                <li>пункти охорони;</li>
+                <li>їдальні;</li>
+                <li>складські приміщення;</li>
+                <li>спеціальні рішення під замовлення.</li>
+              </ul>
+              <p>
+                Ми надаємо побутівки різних габаритів та конфігурацій — від
+                компактних постів охорони до просторих офісних та житлових
+                блоків. Усі модулі проходять контроль якості та відповідають
+                будівельним нормам.
+              </p>
+              <p>
+                Як замовити побутівку?<br />
+                Зв’яжіться з нами будь-яким зручним способом — наші менеджери
+                проконсультують, підберуть оптимальний варіант та організують
+                доставку в найкоротші терміни.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <section class="hero-section">
+      <header>
+        <nav class="navbar navbar-expand-lg navbar-dark d-none d-lg-block">
+          <div class="container">
+            <!-- Logo -->
+            <a class="navbar-brand" href="#">
+              <img
+                src="{{ url_for('static', filename='shop/images/logo.png') }}"
+                alt="Логотип"
+                class="logo"
+              />
+            </a>
+
+            <!-- Contact info for desktop -->
+            <div class="contact-info-container mx-auto d-none d-lg-flex">
+              <div
+                class="contact-info me-3 position-relative"
+                onclick="copyPhoneNumber(this)"
+              >
+                <img
+                  src="{{ url_for('static', filename='shop/images/phone_icon.png') }}"
+                  class="contact-icon"
+                />
+                <span class="phone-number">+38 (067) 464 88 13</span>
+                <div class="copy-tooltip">Скопійовано!</div>
+              </div>
+              <div class="contact-info">
+                <a
+                  href="https://www.google.com/maps/search/%D0%9A%D0%B8%D1%97%D0%B2,+%D0%B2%D1%83%D0%BB.+%D0%93%D0%B2%D0%B8%D0%BD%D1%82%D0%BE%D1%88%D0%B8%D1%8F,4+%D0%BA%D0%BE%D1%80%D0%BF.9/@50.4378954,30.3760343,11z/data=!3m1!4b1?entry=ttu&g_ep=EgoyMDI1MDYwNC4wIKXMDSoASAFQAw%3D%3D"
+                  target="_blank"
+                  class="contact-link"
+                >
+                  <img
+                    src="{{ url_for('static', filename='shop/images/icon_local.png') }}"
+                    class="contact-icon"
+                    alt="Местоположение"
+                  />
+                  <span>Київ, вул. Гвинтошия,4 корп.9</span>
+                </a>
+              </div>
+            </div>
+
+            <!-- Navbar toggler -->
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarNav"
+              aria-label="Переключити навігацію"
+            >
+              <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Navbar links -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                  <a
+                    class="nav-link active"
+                    href="{{ url_for('home') }}"
+                    aria-current="page"
+                    >Головна</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="{{ url_for('about_us') }}">О нас</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="{{ url_for('contact') }}"
+                    >Контакти</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link btn btn-dark" href="{{ url_for('shop') }}"
+                    >Магазин</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+
+        <nav class="navbar navbar-expand-lg d-lg-none">
+          <div class="container-fluid">
+            <!-- Mobile Section -->
+            <div class="contact-info-container-mobile d-flex d-lg-none">
+              <div class="left-side d-flex align-items-center">
+                <div class="contact-info me-3">
+                  <a
+                    href="tel:+380674648813"
+                    class="d-flex align-items-center text-decoration-none"
+                  >
+                    <img
+                      src="{{ url_for('static', filename='shop/images/phone_icon.png') }}"
+                      class="contact-icon"
+                      alt="Телефон"
+                    />
+                  </a>
+                </div>
+                <div class="contact-info d-flex align-items-center">
+                  <a
+                    href="https://www.google.com/maps/search/%D0%9A%D0%B8%D1%97%D0%B2,+%D0%B2%D1%83%D0%BB.+%D0%93%D0%B2%D0%B8%D0%BD%D1%82%D0%BE%D1%88%D0%B8%D1%8F,4+%D0%BA%D0%BE%D1%80%D0%BF.9/@50.4378954,30.3760343,11z/data=!3m1!4b1?entry=ttu&g_ep=EgoyMDI1MDYwNC4wIKXMDSoASAFQAw%3D%3D"
+                    target="_blank"
+                    class="d-flex align-items-center text-decoration-none"
+                  >
+                    <img
+                      src="{{ url_for('static', filename='shop/images/icon_local.png') }}"
+                      class="contact-icon"
+                      alt="Адреса"
+                    />
+                  </a>
+                </div>
+              </div>
+              <div class="center-logo mx-auto">
+                <a class="navbar-brand" href="#">
+                  <img
+                    src="{{ url_for('static', filename='shop/images/logo.png') }}"
+                    alt="Логотип"
+                  />
+                </a>
+              </div>
+              <div class="right-side d-flex align-items-center">
+                <button
+                  class="navbar-toggler"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#navbarNav"
+                  aria-controls="navbarNav"
+                  aria-expanded="false"
+                  aria-label="Переключити навігацію"
+                >
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+              </div>
+            </div>
+            <!-- Navigation Links -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+              <a
+                class="nav-link"
+                href="{{ url_for('home') }}"
+                aria-current="page"
+                >Головна</a
+              >
+              <a class="nav-link" href="{{ url_for('about_us') }}">О нас</a>
+              <a class="nav-link" href="{{ url_for('contact') }}">Контакти</a>
+              <a class="nav-link btn btn-dark" href="{{ url_for('shop') }}"
+                >Магазин</a
+              >
+            </div>
+          </div>
+        </nav>
+      </header>
+      <div class="container">
+        <div class="hero-content py-4">
+          <h1 class="hero-title">Магазин</h1>
+        </div>
+      </div>
+    </section>
+
+    <!-- Остальная часть кода остается без изменений -->
+    <section class="products-section py-5">
+      <div class="container">
+        <h2 class="product-title d-flex align-items-center">
+          ПРОДУКЦІЯ
+          <span class="gray-line flex-grow-1"></span>
+          <button
+            class="btn btn-outline-secondary d-md-none ms-3"
+            type="button"
+            data-bs-toggle="offcanvas"
+            data-bs-target="#categoriesOffcanvas"
+            aria-controls="categoriesOffcanvas"
+          >
+            Категорії
+            <img
+              src="{{ url_for('static', filename='shop/images/category_icon.png') }}"
+              class="category-icon ms-2"
+            />
+          </button>
+        </h2>
+        <div class="row g-3">
+          <!-- Off-canvas for categories (mobile only) -->
+          <div
+            class="offcanvas offcanvas-end"
+            tabindex="-1"
+            id="categoriesOffcanvas"
+            aria-labelledby="categoriesOffcanvasLabel"
+          >
+            <div class="offcanvas-header">
+              <h5 class="offcanvas-title" id="categoriesOffcanvasLabel">
+                Категорії
+              </h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="offcanvas"
+                aria-label="Закрити"
+              ></button>
+            </div>
+            <div class="offcanvas-body">
+              <div class="categories">
+                <div class="category-item">
+                  <input
+                    type="checkbox"
+                    id="burzhuyky"
+                    onchange="filterProducts(event)"
+                  /><label for="burzhuyky">Буржуйки</label>
+                </div>
+                <!--<div class="category-item"><input type="checkbox" id="vahonchyky" onchange="filterProducts(event)"><label for="vahonchyky">Будівельні вагончики</label></div>-->
+                <div class="category-item">
+                  <input
+                    type="checkbox"
+                    id="hen"
+                    onchange="filterProducts(event)"
+                  /><label for="hen">Генератори</label>
+                </div>
+                <div class="category-item">
+                  <input
+                    type="checkbox"
+                    id="littia"
+                    onchange="filterProducts(event)"
+                  /><label for="littia">Лиття металів</label>
+                </div>
+                <div class="category-item">
+                  <input
+                    type="checkbox"
+                    id="metalo"
+                    onchange="filterProducts(event)"
+                  /><label for="metalo">Металоконструкції</label>
+                </div>
+                <div class="category-item">
+                  <input
+                    type="checkbox"
+                    id="obladn"
+                    onchange="filterProducts(event)"
+                  /><label for="obladn">Обладнання</label>
+                </div>
+                <!--<div class="category-item"><input type="checkbox" id="pandusy" onchange="filterProducts(event)"><label for="pandusy">Пандуси та перила</label></div>-->
+                <!--<div class="category-item"><input type="checkbox" id="obr" onchange="filterProducts(event)"><label for="obr">Металообробка</label></div>-->
+                <div class="category-item all-categories">
+                  <input
+                    type="checkbox"
+                    id="all"
+                    checked
+                    onchange="toggleAllCategories()"
+                  />
+                  <label for="all">Всі категорії</label>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Categories for desktop -->
+          <div class="col-md-3 d-none d-md-block">
+            <div class="categories">
+              <p style="font-size: 20px; font-weight: bold; margin-bottom: 5px">
+                Категорії
+              </p>
+              <div class="category-item">
+                <input
+                  type="checkbox"
+                  id="burzhuyky_desktop"
+                  onchange="filterProducts(event)"
+                /><label for="burzhuyky_desktop">Буржуйки</label>
+              </div>
+              <!--<div class="category-item"><input type="checkbox" id="vahonchyky_desktop" onchange="filterProducts(event)"><label for="vahonchyky_desktop">Будівельні вагончики</label></div>-->
+              <div class="category-item">
+                <input
+                  type="checkbox"
+                  id="hen_desktop"
+                  onchange="filterProducts(event)"
+                /><label for="hen_desktop">Генератори</label>
+              </div>
+              <div class="category-item">
+                <input
+                  type="checkbox"
+                  id="littia_desktop"
+                  onchange="filterProducts(event)"
+                /><label for="littia_desktop">Лиття металів</label>
+              </div>
+              <div class="category-item">
+                <input
+                  type="checkbox"
+                  id="metalo_desktop"
+                  onchange="filterProducts(event)"
+                /><label for="metalo_desktop">Металоконструкції</label>
+              </div>
+              <div class="category-item">
+                <input
+                  type="checkbox"
+                  id="obladn_desktop"
+                  onchange="filterProducts(event)"
+                /><label for="obladn_desktop">Обладнання</label>
+              </div>
+              <!--<div class="category-item"><input type="checkbox" id="pandusy_desktop" onchange="filterProducts(event)"><label for="pandusy_desktop">Пандуси та перила</label></div>-->
+              <!--<div class="category-item"><input type="checkbox" id="obr_desktop" onchange="filterProducts(event)"><label for="obr_desktop">Металообробка</label></div>-->
+              <div class="category-item all-categories">
+                <input
+                  type="checkbox"
+                  id="all_desktop"
+                  checked
+                  onchange="toggleAllCategories()"
+                />
+                <label for="all_desktop">Всі категорії</label>
+              </div>
+            </div>
+          </div>
+          <!-- Right Side for Product Cards -->
+          <div class="col-md-9">
+            <div class="row g-3" id="productContainer">
+              <!-- Product cards -->
+              <div class="col-md-6 mb-2 product-item" data-category="obladn">
+                <div class="product-card d-flex flex-column h-100">
+                  <div class="d-flex flex-grow-1">
+                    <div class="text-content flex-grow-1">
+                      <h5 class="section-title">ПЕЛЕТНА ЛІНІЯ</h5>
+                      <p class="section-subtitle">
+                        Продуктивність, до 300 кг/год
+                      </p>
+                      <p class="section-subtitle">Потужність, 45-кВт</p>
+                    </div>
+                    <div class="image-wrapper2">
+                      <img
+                        src="{{ url_for('static', filename='shop/images/shop_items/item1.png') }}"
+                        class="product-image"
+                      />
+                    </div>
+                  </div>
+                  <div class="button-group">
+                    <a href="#orderFormModal" class="btn buy-btn me-2"
+                      >Замовити</a
+                    >
+                    <a href="#pelletLineModal" class="btn">Опис</a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-6 mb-2 product-item" data-category="metalo">
+                <div class="product-card p-3 d-flex flex-column h-100">
+                  <div class="d-flex flex-grow-1">
+                    <div class="text-content flex-grow-1">
+                      <h5 class="section-title">
+                        З'ЄДНАННЯ КОНВЕЄРНИХ РЕШТАКІВ ...
+                      </h5>
+                      <p class="section-subtitle">
+                        Забезпечується надійне з'єднання ставу що гарантує ...
+                      </p>
+                    </div>
+                    <div class="image-wrapper">
+                      <img
+                        src="{{ url_for('static', filename='shop/images/shop_items/item2.png') }}"
+                        class="product-image"
+                      />
+                    </div>
+                  </div>
+                  <div class="button-group">
+                    <a href="#orderFormModal" class="btn buy-btn me-2"
+                      >Замовити</a
+                    >
+                    <a href="#conveyorJointModal" class="btn">Опис</a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-6 mb-2 product-item" data-category="burzhuyky">
+                <div class="product-card p-3 d-flex flex-column h-100">
+                  <div class="d-flex flex-grow-1">
+                    <div class="text-content flex-grow-1">
+                      <h5 class="section-title">СТАЛЬНА ПІЧ</h5>
+                      <p class="section-subtitle">
+                        Розміри ВхШхГ - 600х290х450, мм.
+                      </p>
+                      <p class="section-subtitle">
+                        Висота з патрубком - 670 мм.
+                      </p>
+                    </div>
+                    <div class="image-wrapper">
+                      <img
+                        src="{{ url_for('static', filename='shop/images/shop_items/item3.png') }}"
+                        class="product-image"
+                      />
+                    </div>
+                  </div>
+                  <div class="button-group">
+                    <a href="#orderFormModal" class="btn buy-btn me-2"
+                      >Замовити</a
+                    >
+                    <a href="#SteelStove" class="btn">Опис</a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-6 mb-2 product-item" data-category="littia">
+                <div class="product-card p-3 d-flex flex-column h-100">
+                  <div class="d-flex flex-grow-1">
+                    <div class="text-content flex-grow-1">
+                      <h5 class="section-title">ДИСКИ ДЛЯ ШТАНГИ 25КГ</h5>
+                      <p class="section-subtitle">
+                        Виготовлені зі сталі 25кг посадковий діаметр 52мм/31мм
+                      </p>
+                    </div>
+                    <div class="image-wrapper">
+                      <img
+                        src="{{ url_for('static', filename='shop/images/shop_items/item4.png') }}"
+                        class="product-image"
+                      />
+                    </div>
+                  </div>
+                  <div class="button-group">
+                    <a href="#orderFormModal" class="btn buy-btn me-2"
+                      >Замовити</a
+                    >
+                    <a href="#barbell25kgModal" class="btn">Опис</a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-6 mb-2 product-item" data-category="littia">
+                <div class="product-card p-3 d-flex flex-column h-100">
+                  <div class="d-flex flex-grow-1">
+                    <div class="text-content flex-grow-1">
+                      <h5 class="section-title">ДИСКИ ДЛЯ ШТАНГИ 20КГ</h5>
+                      <p class="section-subtitle">
+                        Виготовлені зі сталі 20кг посадковий діаметр 52мм/31мм
+                      </p>
+                    </div>
+                    <div class="image-wrapper">
+                      <img
+                        src="{{ url_for('static', filename='shop/images/shop_items/item5.png') }}"
+                        class="product-image"
+                      />
+                    </div>
+                  </div>
+                  <div class="button-group">
+                    <a href="#orderFormModal" class="btn buy-btn me-2"
+                      >Замовити</a
+                    >
+                    <a href="#barbell20kgModal" class="btn">Опис</a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-6 mb-2 product-item" data-category="littia">
+                <div class="product-card p-3 d-flex flex-column h-100">
+                  <div class="d-flex flex-grow-1">
+                    <div class="text-content flex-grow-1">
+                      <h5 class="section-title">ДИСКИ ДЛЯ ШТАНГИ 15КГ</h5>
+                      <p class="section-subtitle">
+                        Виготовлені зі сталі 15кг посадковий діаметр 52мм/31мм
+                      </p>
+                    </div>
+                    <div class="image-wrapper">
+                      <img
+                        src="{{ url_for('static', filename='shop/images/shop_items/item6.png') }}"
+                        class="product-image"
+                      />
+                    </div>
+                  </div>
+                  <div class="button-group">
+                    <a href="#orderFormModal" class="btn buy-btn me-2"
+                      >Замовити</a
+                    >
+                    <a href="#barbell15kgModal" class="btn">Опис</a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-6 mb-2 product-item" data-category="littia">
+                <div class="product-card p-3 d-flex flex-column h-100">
+                  <div class="d-flex flex-grow-1">
+                    <div class="text-content flex-grow-1">
+                      <h5 class="section-title">ДИСКИ ДЛЯ ШТАНГИ 10КГ</h5>
+                      <p class="section-subtitle">
+                        Виготовлені зі сталі 10кг посадковий діаметр 52мм/31мм
+                      </p>
+                    </div>
+                    <div class="image-wrapper">
+                      <img
+                        src="{{ url_for('static', filename='shop/images/shop_items/item7.png') }}"
+                        class="product-image"
+                      />
+                    </div>
+                  </div>
+                  <div class="button-group">
+                    <a href="#orderFormModal" class="btn buy-btn me-2"
+                      >Замовити</a
+                    >
+                    <a href="#barbell10kgModal" class="btn">Опис</a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-6 mb-2 product-item" data-category="littia">
+                <div class="product-card p-3 d-flex flex-column h-100">
+                  <div class="d-flex flex-grow-1">
+                    <div class="text-content flex-grow-1">
+                      <h5 class="section-title">ДИСКИ ДЛЯ ШТАНГИ 5КГ</h5>
+                      <p class="section-subtitle">
+                        Виготовлені зі сталі 5кг посадковий діаметр 52мм/31мм
+                      </p>
+                    </div>
+                    <div class="image-wrapper">
+                      <img
+                        src="{{ url_for('static', filename='shop/images/shop_items/item8.png') }}"
+                        class="product-image"
+                      />
+                    </div>
+                  </div>
+                  <div class="button-group">
+                    <a href="#orderFormModal" class="btn buy-btn me-2"
+                      >Замовити</a
+                    >
+                    <a href="#barbell5kgModal" class="btn">Опис</a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-6 mb-2 product-item" data-category="littia">
+                <div class="product-card p-3 d-flex flex-column h-100">
+                  <div class="d-flex flex-grow-1">
+                    <div class="text-content flex-grow-1">
+                      <h5 class="section-title">КОЛОСНИКИ ЧАВУННІ</h5>
+                      <p class="section-subtitle">
+                        Чавунні грати в печах для проходу повітря під паливо та
+                        виходу золи ...
+                      </p>
+                    </div>
+                    <div class="image-wrapper2">
+                      <img
+                        src="{{ url_for('static', filename='shop/images/shop_items/item9.png') }}"
+                        class="product-image"
+                      />
+                    </div>
+                  </div>
+                  <div class="button-group">
+                    <a href="#orderFormModal" class="btn buy-btn me-2"
+                      >Замовити</a
+                    >
+                    <a href="#kolosnikichavunni" class="btn">Опис</a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-6 mb-2 product-item" data-category="obladn">
+                <div class="product-card p-3 d-flex flex-column h-100">
+                  <div class="d-flex flex-grow-1">
+                    <div class="text-content flex-grow-1">
+                      <h5 class="section-title">
+                        ДВООПІРНИЙ ПІДШИПНИКОВИЙ ВУЗОЛ
+                      </h5>
+                      <p class="section-subtitle">Точніше обертання</p>
+                    </div>
+                    <div class="image-wrapper2">
+                      <img
+                        src="{{ url_for('static', filename='shop/images/shop_items/item10.png') }}"
+                        class="product-image"
+                      />
+                    </div>
+                  </div>
+                  <div class="button-group">
+                    <a href="#orderFormModal" class="btn buy-btn me-2"
+                      >Замовити</a
+                    >
+                    <a href="#dvoopornyypidshipnikovyyvuzol" class="btn"
+                      >Опис</a
+                    >
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-6 mb-2 product-item" data-category="hen">
+                <div class="product-card p-3 d-flex flex-column h-100">
+                  <div class="d-flex flex-grow-1">
+                    <div class="text-content flex-grow-1">
+                      <h5 class="section-title">GE-9000 TBH RENTAL</h5>
+                      <p class="section-subtitle">Виробник: Італія</p>
+                      <p class="section-subtitle">Двигун: Бензиновий</p>
+                    </div>
+                    <div class="image-wrapper">
+                      <img
+                        src="{{ url_for('static', filename='shop/images/shop_items/item11.png') }}"
+                        class="product-image"
+                      />
+                    </div>
+                  </div>
+                  <div class="button-group">
+                    <a href="#orderFormModal" class="btn buy-btn me-2"
+                      >Замовити</a
+                    >
+                    <a href="#ge9000" class="btn">Опис</a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-6 mb-2 product-item" data-category="hen">
+                <div class="product-card p-3 d-flex flex-column h-100">
+                  <div class="d-flex flex-grow-1">
+                    <div class="text-content flex-grow-1">
+                      <h5 class="section-title">GE-7500 MBH RENTAL</h5>
+                      <p class="section-subtitle">Виробник: Італія</p>
+                      <p class="section-subtitle">Двигун: Бензиновий</p>
+                    </div>
+                    <div class="image-wrapper">
+                      <img
+                        src="{{ url_for('static', filename='shop/images/shop_items/item12.png') }}"
+                        class="product-image"
+                      />
+                    </div>
+                  </div>
+                  <div class="button-group">
+                    <a href="#orderFormModal" class="btn buy-btn me-2"
+                      >Замовити</a
+                    >
+                    <a href="#ge7500" class="btn">Опис</a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-6 mb-2 product-item" data-category="hen">
+                <div class="product-card p-3 d-flex flex-column h-100">
+                  <div class="d-flex flex-grow-1">
+                    <div class="text-content flex-grow-1">
+                      <h5 class="section-title">GE 4500MI INVECTOR</h5>
+                      <p class="section-subtitle">Виробник: Італія</p>
+                      <p class="section-subtitle">
+                        Автоматичний регулятор напруги
+                      </p>
+                    </div>
+                    <div class="image-wrapper">
+                      <img
+                        src="{{ url_for('static', filename='shop/images/shop_items/item13.png') }}"
+                        class="product-image"
+                      />
+                    </div>
+                  </div>
+                  <div class="button-group">
+                    <a href="#orderFormModal" class="btn buy-btn me-2"
+                      >Замовити</a
+                    >
+                    <a href="#ge4500mi" class="btn">Опис</a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-6 mb-2 product-item" data-category="hen">
+                <div class="product-card p-3 d-flex flex-column h-100">
+                  <div class="d-flex flex-grow-1">
+                    <div class="text-content flex-grow-1">
+                      <h5 class="section-title">GE 6900</h5>
+                      <p class="section-subtitle">Частота: 50 Гц</p>
+                      <p class="section-subtitle">
+                        Вмістимість топливного бака: 20 л.
+                      </p>
+                    </div>
+                    <div class="image-wrapper">
+                      <img
+                        src="{{ url_for('static', filename='shop/images/shop_items/item14.png') }}"
+                        class="product-image"
+                      />
+                    </div>
+                  </div>
+                  <div class="button-group">
+                    <a href="#orderFormModal" class="btn buy-btn me-2"
+                      >Замовити</a
+                    >
+                    <a href="#ge6900" class="btn">Опис</a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-6 mb-2 product-item" data-category="hen">
+                <div class="product-card p-3 d-flex flex-column h-100">
+                  <div class="d-flex flex-grow-1">
+                    <div class="text-content flex-grow-1">
+                      <h5 class="section-title">9000TBH ОРЕНДА</h5>
+                      <p class="section-subtitle">Виробник: Італія</p>
+                      <p class="section-subtitle">Двигун: Бензиновий</p>
+                    </div>
+                    <div class="image-wrapper">
+                      <img
+                        src="{{ url_for('static', filename='shop/images/shop_items/item11.png') }}"
+                        class="product-image"
+                      />
+                    </div>
+                  </div>
+                  <div class="button-group">
+                    <a href="#orderFormModal" class="btn buy-btn me-2"
+                      >Замовити</a
+                    >
+                    <a href="#ge9000rent" class="btn">Опис</a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-6 mb-2 product-item" data-category="hen">
+                <div class="product-card p-3 d-flex flex-column h-100">
+                  <div class="d-flex flex-grow-1">
+                    <div class="text-content flex-grow-1">
+                      <h5 class="section-title">GE-SX-18000 KDT</h5>
+                      <p class="section-subtitle">Виробник: Італія</p>
+                      <p class="section-subtitle">Двигун: Дизельний</p>
+                    </div>
+                    <div class="image-wrapper">
+                      <img
+                        src="{{ url_for('static', filename='shop/images/shop_items/item15.png') }}"
+                        class="product-image"
+                      />
+                    </div>
+                  </div>
+                  <div class="button-group">
+                    <a href="#orderFormModal" class="btn buy-btn me-2"
+                      >Замовити</a
+                    >
+                    <a href="#gesx18000" class="btn">Опис</a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-6 mb-2 product-item" data-category="hen">
+                <div class="product-card p-3 d-flex flex-column h-100">
+                  <div class="d-flex flex-grow-1">
+                    <div class="text-content flex-grow-1">
+                      <h5 class="section-title">Будівельні побутівки</h5>
+                      <p class="section-subtitle">
+                        Утеплені конструкції, які забезпечують комфортні умови
+                        для роботи та ...
+                      </p>
+                    </div>
+                    <div class="image-wrapper">
+                      <img
+                        src="{{ url_for('static', filename='shop/images/shop_items/item16.png') }}"
+                        class="product-image"
+                      />
+                    </div>
+                  </div>
+                  <div class="button-group">
+                    <a href="#orderFormModal" class="btn buy-btn me-2"
+                      >Замовити</a
+                    >
+                    <a href="#budivelnipobutivky" class="btn">Опис</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="container py-5 connect">
+      <h2 class="about-title text-white">Зв'яжіться з нами</h2>
+      <h5 class="about-text text-white">
+        І ми реалізуємо ваш проєкт від ідеї до запуску
+      </h5>
+      <div class="col-md-6">
+        <a class="btn btn-primary" href="{{ url_for('contact') }}"
+          >Консультація</a
+        >
+        <img
+          src="{{ url_for('static', filename='shop/images/phone_icon.png') }}"
+          class="contact-icon"
+        />
+        <span class="contact-text d-none d-sm-inline">+38 (067) 464 88 13</span>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="row footer-align">
+          <div class="col-md-2 footer-column">
+            <img
+              src="{{ url_for('static', filename='shop/images/icon.png') }}"
+              class="footer-logo"
+            />
+          </div>
+          <div
+            class="col-md-6 footer-column d-flex flex-column align-items-center"
+          >
+            <p class="footer-contact-item mb-1">© Всі права захищені.</p>
+            <p class="footer-contact-item mb-0">Розроблено Rise app</p>
+          </div>
+          <div class="col-md-4 footer-column">
+            <div class="footer-contact-container d-flex flex-wrap">
+              <div class="footer-contact-column flex-fill">
+                <h5 class="footer-title">E-mail</h5>
+                <p class="footer-contact-item">ljux@ukr.net</p>
+                <p class="footer-contact-item">0674648813@ukr.net</p>
+              </div>
+              <div class="footer-contact-column flex-fill">
+                <h5 class="footer-title">Телефон</h5>
+                <p class="footer-contact-item">+38 (067) 464 88 13</p>
+                <p class="footer-contact-item">+38 (098) 304 30 44</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- Bootstrap JS for interactive components -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      function filterProducts(event) {
+        if (event) {
+          syncCheckboxes(event);
+        }
+
+        const desktopCheckboxes = document.querySelectorAll(
+          "#burzhuyky_desktop, #vahonchyky_desktop, #hen_desktop, #littia_desktop, #metalo_desktop, #obladn_desktop, #pandusy_desktop, #obr_desktop"
+        );
+        const mobileCheckboxes = document.querySelectorAll(
+          "#burzhuyky, #vahonchyky, #hen, #littia, #metalo, #obladn, #pandusy, #obr"
+        );
+        const productItems = document.querySelectorAll(".product-item");
+
+        let selectedCategory = null;
+
+        desktopCheckboxes.forEach((checkbox) => {
+          if (checkbox.checked) {
+            selectedCategory = checkbox.id.replace("_desktop", "");
+          }
+        });
+
+        mobileCheckboxes.forEach((checkbox) => {
+          if (checkbox.checked) {
+            selectedCategory = checkbox.id;
+          }
+        });
+
+        productItems.forEach((item) => {
+          const itemCategory = item.getAttribute("data-category");
+
+          if (
+            !selectedCategory ||
+            selectedCategory === "all" ||
+            itemCategory === selectedCategory
+          ) {
+            item.classList.remove("hidden");
+          } else {
+            item.classList.add("hidden");
+          }
+        });
+
+        updateAllCategoriesCheckbox();
+      }
+
+      function syncCheckboxes(event) {
+        const categories = [
+          "burzhuyky",
+          "vahonchyky",
+          "hen",
+          "littia",
+          "metalo",
+          "obladn",
+          "pandusy",
+          "obr",
+        ];
+        const allDesktop = document.getElementById("all_desktop");
+        const allMobile = document.getElementById("all");
+
+        if (event && event.target) {
+          const targetId = event.target.id;
+
+          if (
+            categories.includes(targetId) ||
+            categories.includes(targetId.replace("_desktop", ""))
+          ) {
+            // Снимаем все чекбоксы
+            categories.forEach((category) => {
+              const desktopCheckbox = document.getElementById(
+                category + "_desktop"
+              );
+              const mobileCheckbox = document.getElementById(category);
+
+              if (desktopCheckbox && mobileCheckbox) {
+                desktopCheckbox.checked = false;
+                mobileCheckbox.checked = false;
+              }
+            });
+
+            const category = targetId.replace("_desktop", "");
+            const desktopCheckbox = document.getElementById(
+              category + "_desktop"
+            );
+            const mobileCheckbox = document.getElementById(category);
+
+            if (desktopCheckbox && mobileCheckbox) {
+              if (targetId === category + "_desktop") {
+                desktopCheckbox.checked = true;
+                mobileCheckbox.checked = true;
+              } else if (targetId === category) {
+                desktopCheckbox.checked = true;
+                mobileCheckbox.checked = true;
+              }
+            }
+
+            if (allDesktop) allDesktop.checked = false;
+            if (allMobile) allMobile.checked = false;
+          }
+        }
+      }
+
+      function toggleAllCategories() {
+        const allDesktop = document.getElementById("all_desktop");
+        const allMobile = document.getElementById("all");
+        const desktopCheckboxes = document.querySelectorAll(
+          "#burzhuyky_desktop, #vahonchyky_desktop, #hen_desktop, #littia_desktop, #metalo_desktop, #obladn_desktop, #pandusy_desktop, #obr_desktop"
+        );
+        const mobileCheckboxes = document.querySelectorAll(
+          "#burzhuyky, #vahonchyky, #hen, #littia, #metalo, #obladn, #pandusy, #obr"
+        );
+
+        const isAllChecked =
+          (allDesktop && allDesktop.checked) ||
+          (allMobile && allMobile.checked);
+
+        if (allDesktop) allDesktop.checked = isAllChecked;
+        if (allMobile) allMobile.checked = isAllChecked;
+
+        if (isAllChecked) {
+          desktopCheckboxes.forEach((checkbox) => (checkbox.checked = false));
+          mobileCheckboxes.forEach((checkbox) => (checkbox.checked = false));
+
+          document.querySelectorAll(".product-item").forEach((item) => {
+            item.classList.remove("hidden");
+          });
+        } else {
+          filterProducts();
+        }
+      }
+
+      function updateAllCategoriesCheckbox() {
+        const desktopCheckboxes = document.querySelectorAll(
+          "#burzhuyky_desktop, #vahonchyky_desktop, #hen_desktop, #littia_desktop, #metalo_desktop, #obladn_desktop, #pandusy_desktop, #obr_desktop"
+        );
+        const mobileCheckboxes = document.querySelectorAll(
+          "#burzhuyky, #vahonchyky, #hen, #littia, #metalo, #obladn, #pandusy, #obr"
+        );
+        const allDesktop = document.getElementById("all_desktop");
+        const allMobile = document.getElementById("all");
+
+        let hasCheckedCategories = false;
+        desktopCheckboxes.forEach((checkbox) => {
+          if (checkbox.checked) hasCheckedCategories = true;
+        });
+        mobileCheckboxes.forEach((checkbox) => {
+          if (checkbox.checked) hasCheckedCategories = true;
+        });
+
+        if (!hasCheckedCategories) {
+          if (allDesktop) allDesktop.checked = true;
+          if (allMobile) allMobile.checked = true;
+        } else {
+          if (allDesktop) allDesktop.checked = false;
+          if (allMobile) allMobile.checked = false;
+        }
+      }
+
+      document.addEventListener("DOMContentLoaded", function () {
+        document.querySelectorAll(".product-item").forEach((item) => {
+          item.classList.remove("hidden");
+        });
+      });
+    </script>
+    <script>
+      function copyPhoneNumber(el) {
+        const text = el.querySelector(".phone-number").textContent;
+        navigator.clipboard.writeText(text).then(() => {
+          el.classList.add("show-tooltip");
+          setTimeout(() => {
+            el.classList.remove("show-tooltip");
+          }, 1500);
+        });
+      }
+    </script>
+  </body>
+</html>

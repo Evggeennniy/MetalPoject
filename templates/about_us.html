@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" />
+    <title>Про нас</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Tektur&family=Commissioner&family=Montserrat:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='aboutus/css/style.css') }}"
+    />
+  </head>
+  <body>
+    <!-- Hero Section with Header -->
+    <section class="hero-section">
+      <header>
+        <!-- PC версия header из старого кода -->
+        <nav class="navbar navbar-expand-lg navbar-dark d-none d-lg-flex">
+          <div class="container">
+            <!-- Logo -->
+            <a class="navbar-brand" href="#">
+              <img
+                src="{{ url_for('static', filename='aboutus/images/logo.png') }}"
+              />
+            </a>
+
+            <!-- Contact info for desktop -->
+            <div class="contact-info-container mx-auto d-none d-lg-flex">
+              <div
+                class="contact-info me-3 position-relative"
+                onclick="copyPhoneNumber(this)"
+              >
+                <img
+                  src="{{ url_for('static', filename='aboutus/images/phone_icon.png') }}"
+                  class="contact-icon"
+                />
+                <span class="phone-number">+38 (067) 464 88 13</span>
+                <div class="copy-tooltip">Скопировано!</div>
+              </div>
+              <div class="contact-info">
+                <a
+                  href="https://www.google.com/maps/search/%D0%9A%D0%B8%D1%97%D0%B2,+%D0%B2%D1%83%D0%BB.+%D0%93%D0%B2%D0%B8%D0%BD%D1%82%D0%BE%D1%88%D0%B8%D1%8F,4+%D0%BA%D0%BE%D1%80%D0%BF.9/@50.4378954,30.3760343,11z/data=!3m1!4b1?entry=ttu&g_ep=EgoyMDI1MDYwNC4wIKXMDSoASAFQAw%3D%3D"
+                  target="_blank"
+                  class="contact-link"
+                >
+                  <img
+                    src="{{ url_for('static', filename='aboutus/images/icon_local.png') }}"
+                    class="contact-icon"
+                    alt="Местоположение"
+                  />
+                  <span>Київ, вул. Гвинтошия,4 корп.9</span>
+                </a>
+              </div>
+            </div>
+
+            <!-- Navbar links -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                  <a
+                    class="nav-link active"
+                    href="{{ url_for('home') }}"
+                    aria-current="page"
+                    >Головна</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="{{ url_for('about_us') }}">О нас</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="{{ url_for('contact') }}"
+                    >Контакти</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link btn btn-dark" href="{{ url_for('shop') }}"
+                    >Магазин</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+
+        <!-- Mobile версия header из текущего кода -->
+        <nav class="navbar navbar-expand-lg d-lg-none">
+          <div class="container-fluid">
+            <div class="contact-info-container-mobile d-flex d-lg-none">
+              <div class="left-side d-flex align-items-center">
+                <div class="contact-info me-3">
+                  <a
+                    href="tel:+380674648813"
+                    class="d-flex align-items-center text-decoration-none"
+                  >
+                    <img
+                      src="{{ url_for('static', filename='aboutus/images/phone_icon.png') }}"
+                      class="contact-icon"
+                      alt="Телефон"
+                    />
+                  </a>
+                </div>
+                <div class="contact-info d-flex align-items-center">
+                  <a
+                    href="https://www.google.com/maps/search/%D0%9A%D0%B8%D1%97%D0%B2,+%D0%B2%D1%83%D0%BB.+%D0%93%D0%B2%D0%B8%D0%BD%D1%82%D0%BE%D1%88%D0%B8%D1%8F,4+%D0%BA%D0%BE%D1%80%D0%BF.9/@50.4378954,30.3760343,11z/data=!3m1!4b1?entry=ttu&g_ep=EgoyMDI1MDYwNC4wIKXMDSoASAFQAw%3D%3D"
+                    target="_blank"
+                    class="d-flex align-items-center text-decoration-none"
+                  >
+                    <img
+                      src="{{ url_for('static', filename='aboutus/images/icon_local.png') }}"
+                      class="contact-icon"
+                      alt="Адреса"
+                    />
+                  </a>
+                </div>
+              </div>
+
+              <div class="center-logo mx-auto">
+                <a class="navbar-brand" href="#">
+                  <img
+                    src="{{ url_for('static', filename='aboutus/images/logo.png') }}"
+                    alt="Логотип"
+                  />
+                </a>
+              </div>
+
+              <div class="right-side d-flex align-items-center">
+                <button
+                  class="navbar-toggler"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#navbarNav"
+                  aria-controls="navbarNav"
+                  aria-expanded="false"
+                  aria-label="Переключити навігацію"
+                >
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+              </div>
+            </div>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+              <a
+                class="nav-link active"
+                href="{{ url_for('home') }}"
+                aria-current="page"
+                >Головна</a
+              >
+              <a class="nav-link" href="{{ url_for('about_us') }}">О нас</a>
+              <a class="nav-link" href="{{ url_for('contact') }}">Контакти</a>
+              <a class="nav-link btn btn-dark" href="{{ url_for('shop') }}"
+                >Магазин</a
+              >
+            </div>
+          </div>
+        </nav>
+      </header>
+      <!-- Hero content with main call-to-action -->
+      <div class="container">
+        <h1 class="hero-title">Про нас</h1>
+      </div>
+    </section>
+
+    <section class="about-section">
+      <div class="container">
+        <div class="row align">
+          <div class="col-lg-6">
+            <div class="gallery-item">
+              <img
+                src="{{ url_for('static', filename='aboutus/images/icon.png') }}"
+                alt="Про нас"
+              />
+            </div>
+          </div>
+          <div class="col-lg-6 mb-4 mb-lg-0">
+            <p class="section-subtitle">Арагон-ТК</p>
+            <h2 class="about-title">
+              Ми створюємо надійні рішення вже понад 25 років
+            </h2>
+            <p class="about-text">
+              ТОВ «Арагон-ТК» працює з 1999 року. Ми починали з торгівлі
+              вугіллям, а сьогодні — це повноцінне виробництво обладнання для
+              переробки деревини, агровідходів, лиття металів та металообробки.
+              Наша база знаходиться в селі Феневичі, Київська область.
+            </p>
+            <span class="orange-line"></span>
+            <p class="about-text">
+              Ми виконуємо повний цикл робіт: від проєктування — до готового
+              виробу. Сучасне обладнання, досвід і відповідальність дозволяють
+              нам створювати продукцію, яка витримує випробування часом і
+              навантаженням.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="competence-section py-5">
+      <div class="container">
+        <div class="row align">
+          <!-- Ліва частина: КОМПЕТЕНЦІЇ -->
+          <div class="col-md-5">
+            <h2 class="product-title align">НАШІ КОМПЕТЕНЦІЇ</h2>
+            <h5 class="about-sub-title">
+              Лиття
+              <span class="yellow-line"></span>
+            </h5>
+            <p class="section-subtitle">
+              Виготовляємо точні та міцні деталі з чорних і кольорових металів
+            </p>
+            <h5 class="about-sub-title">
+              Обробка
+              <span class="yellow-line"></span>
+            </h5>
+            <p class="section-subtitle">
+              Сучасне ЧПУ-обладнання, плазмова різка, токарні та фрезерні роботи
+            </p>
+            <h5 class="about-sub-title">
+              Проєктування
+              <span class="yellow-line"></span>
+            </h5>
+            <p class="section-subtitle">
+              Створення ліній під переробку деревини, пелет, брикетів під ключ
+            </p>
+          </div>
+
+          <!-- Права частина: ДОСВІД -->
+          <div class="col-md-5" style="margin-left: auto">
+            <div
+              class="experience-strip d-flex flex-wrap justify-content-center"
+            >
+              <div class="experience-item mb-1">
+                <span class="experience-number">25+</span>
+                <span class="experience-text">років<br />досвіду</span>
+              </div>
+              <div class="experience-item mb-2">
+                <span class="experience-number">200+</span>
+                <span class="experience-text"
+                  >реалізованих<br />замовлень щороку</span
+                >
+              </div>
+              <div class="experience-item mb-2">
+                <span class="experience-number">5+</span>
+                <span class="experience-text"
+                  >співпрацюючих<br />країн з нами</span
+                >
+              </div>
+              <div class="experience-item mb-2">
+                <span class="experience-number">10+</span>
+                <span class="experience-text"
+                  >видів власного<br />виробництва</span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container py-5 connect">
+        <h2 class="about-title text-white mb-0" style="text-align: center">
+          Зв'яжіться з нами
+        </h2>
+        <h5 class="about-text text-white">
+          І ми реалізуємо ваш проєкт від ідеї до запуску
+        </h5>
+        <a class="btn btn-primary" href="https:t.me//Chulanov_Igor">Написати</a>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="row footer-align">
+          <div class="col-md-2 footer-column">
+            <img
+              src="{{ url_for('static', filename='aboutus/images/icon.png') }}"
+              class="footer-logo"
+            />
+          </div>
+          <div
+            class="col-md-6 footer-column d-flex flex-column align-items-center"
+          >
+            <p class="footer-contact-item mb-1">© Всі права захищені.</p>
+            <p class="footer-contact-item mb-0">Розроблено Rise app</p>
+          </div>
+          <div class="col-md-4 footer-column">
+            <div class="footer-contact-container d-flex flex-wrap">
+              <div class="footer-contact-column flex-fill">
+                <h5 class="footer-title">E-mail</h5>
+                <p class="footer-contact-item">ljux@ukr.net</p>
+                <p class="footer-contact-item">0674648813@ukr.net</p>
+              </div>
+              <div class="footer-contact-column flex-fill">
+                <h5 class="footer-title">Телефон</h5>
+                <p class="footer-contact-item">+38 (067) 464 88 13</p>
+                <p class="footer-contact-item">+38 (098) 304 30 44</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      function copyPhoneNumber(el) {
+        const text = el.querySelector(".phone-number").textContent;
+        navigator.clipboard.writeText(text).then(() => {
+          el.classList.add("show-tooltip");
+          setTimeout(() => {
+            el.classList.remove("show-tooltip");
+          }, 1500);
+        });
+      }
+    </script>
+  </body>
+</html>

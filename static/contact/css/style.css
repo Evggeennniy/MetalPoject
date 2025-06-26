@@ -1,0 +1,835 @@
+/* ====================================
+   1. CSS VARIABLES (ROOT)
+   ==================================== */
+:root {
+  --primary-color: #ff3c5a;
+  --orange-color: #ff8c00;
+  --text-light: #ffffff;
+  --text-gray: #b0b0b0;
+  --bg-light: #f5f5f5;
+  --dark-bg: #1f1f1f;
+}
+
+/* ====================================
+   2. BASE STYLES
+   ==================================== */
+body {
+  font-family: "Commissioner", sans-serif;
+  overflow-x: hidden;
+}
+
+/* ====================================
+   3. LAYOUT COMPONENTS
+   ==================================== */
+
+/* ----- 3.1 Navbar ----- */
+/* Стили для PC версии из старого кода */
+.navbar.navbar-dark {
+  background-color: rgba(0, 0, 0, 0.8);
+  padding: 15px 0;
+  position: absolute;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar-dark .navbar-collapse {
+  text-align: center;
+}
+
+.navbar-dark .navbar-brand img {
+  height: 30px;
+}
+
+.navbar-dark .nav-link {
+  color: var(--text-light);
+  margin: 0 10px;
+  font-size: 16px;
+}
+
+.contact-info-container {
+  display: flex;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 14px;
+  margin-right: 15px;
+  align-items: center;
+}
+
+.navbar-dark .contact-info {
+  display: flex;
+  align-items: center;
+  color: var(--text-light);
+  font-size: 16px;
+  margin-right: 20px;
+}
+
+.navbar-dark .contact-icon {
+  width: 24px;
+  height: 24px;
+  margin-right: 8px;
+}
+
+/* Стили для Mobile версии из текущего кода */
+.navbar:not(.navbar-dark) {
+  background-color: rgba(0, 0, 0, 0.8);
+  padding: 15px 0;
+  position: absolute;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar:not(.navbar-dark) .navbar-brand img {
+  max-height: 50px;
+}
+
+.navbar:not(.navbar-dark) .nav-link {
+  color: var(--text-light);
+  font-size: 16px;
+  color: white;
+}
+
+.contact-info-container-mobile {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  order: -1;
+}
+
+.navbar:not(.navbar-dark) .contact-info {
+  display: flex;
+  align-items: center;
+  color: white;
+}
+
+.navbar:not(.navbar-dark) .contact-text {
+  font-size: 16px;
+  color: white;
+}
+
+.navbar:not(.navbar-dark) .nav-link.btn {
+  background-color: #343a40;
+  color: white;
+  border: 1px solid #495057;
+}
+
+.navbar:not(.navbar-dark) .navbar-toggler {
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.navbar:not(.navbar-dark) .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.8%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+/* ----- 3.2 Hero Section ----- */
+.hero-section {
+  background: url("/static/shop/images/bg1.png") no-repeat center center;
+  background-size: cover;
+  color: var(--text-light);
+  padding: 100px 0;
+  min-height: 300px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-title {
+  font-size: 35px;
+  font-weight: 700;
+  margin-top: 30px;
+  font-family: "Tektur", sans-serif;
+  text-align: center;
+}
+
+/* Остальные стили из текущей версии */
+.btn-primary {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+  border-radius: 4px;
+  transition: all 0.3s ease;
+  width: 40%;
+  margin-top: 10px;
+  font-size: 16px;
+  letter-spacing: 1px;
+  font-weight: bold;
+  display: block;
+}
+
+.btn-primary:hover {
+  background-color: #e0354e;
+  border-color: #e0354e;
+}
+
+.footer-align {
+  align-items: center;
+}
+
+.footer {
+  background-color: #000000;
+  color: #ffffff;
+  padding: 30px 0;
+}
+
+.footer-logo {
+  max-width: 150px;
+  height: auto;
+}
+
+.footer-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--primary-color);
+  margin-bottom: 10px;
+}
+
+.footer-contact-item {
+  font-size: 14px;
+  color: var(--text-gray);
+  margin-bottom: 5px;
+}
+
+.footer-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: start;
+  margin-bottom: 20px;
+}
+
+.footer-contact-container {
+  width: 100%;
+}
+
+.footer-contact-column {
+  flex: 1;
+}
+
+.footer-contact-column:first-child {
+  margin-right: 20px;
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 991px) {
+  .footer .row {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer-column {
+    width: 100%;
+    margin-bottom: 30px;
+    text-align: center;
+  }
+
+  .footer-contact-container {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer-contact-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer-contact-column {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .footer-contact-column:first-child {
+    margin-right: 0;
+  }
+}
+
+@media (max-width: 576px) {
+  .footer-logo {
+    max-width: 120px;
+  }
+
+  .footer-title {
+    font-size: 16px;
+  }
+
+  .footer-contact-item {
+    font-size: 12px;
+  }
+}
+
+.about-section .footer-column {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-wrap: nowrap;
+  width: 100%;
+}
+
+.about-section {
+  background-color: var(--bg-light);
+  padding: 80px 0;
+}
+
+.manufacturing-section .manufacturing-content {
+  padding: 20px;
+  background-color: var(--dark-bg);
+}
+
+.experience-block {
+  padding: 0 0;
+}
+
+.about-title {
+  font-size: 26px;
+  font-weight: 600;
+  text-align: start;
+  margin-bottom: 20px;
+  color: black;
+  font-family: "Montserrat", sans-serif;
+}
+
+.about-sub-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: black;
+  text-align: start;
+  font-family: "Montserrat", sans-serif;
+}
+
+.experience-strip {
+  background-color: var(--primary-color);
+  padding: 15px;
+  gap: 100px;
+  text-align: center;
+  justify-content: center;
+}
+
+.experience-item {
+  justify-content: center;
+  text-align: center;
+  font-weight: 500;
+  width: 48%;
+  margin-bottom: 15px;
+}
+
+.experience-number {
+  font-size: 20px;
+  font-weight: bold;
+  font-family: "Tektur", sans-serif;
+}
+
+.experience-text {
+  font-size: 16px;
+  white-space: nowrap;
+  text-align: start;
+}
+
+.about-text {
+  font-size: 16px;
+  line-height: 1.6;
+  color: black;
+  margin-bottom: 25px;
+  font-family: "Montserrat", sans-serif;
+}
+
+.orange-line {
+  display: block;
+  width: 200px;
+  height: 5px;
+  background-color: var(--orange-color);
+  margin: 20px 0;
+}
+
+.gallery-item img {
+  width: 90%;
+  height: auto;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+  justify-self: center;
+  display: block;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.05);
+}
+
+.about-item {
+  font-size: 16px;
+  color: black;
+  text-align: start;
+  margin-bottom: 5px;
+}
+
+.img-fluid {
+  max-width: 100%;
+  height: auto;
+}
+
+.about-align {
+  align-items: center;
+}
+
+.competence-align {
+  align-items: start;
+}
+
+/* Contact Form Styles */
+.contact-form-container {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  max-width: 450px;
+  min-height: 400px;
+  margin: 0 auto;
+}
+
+.form-title {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 25px;
+  text-align: start;
+  color: #333;
+  font-family: "Montserrat", sans-serif;
+}
+
+.contact-form .form-group {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.about-section .footer-contact-column {
+  flex: 0 0 auto;
+  width: auto;
+  margin-right: 60px;
+}
+
+.contact-form input {
+  width: 100%;
+  padding: 10px 10px 10px 40px;
+  border: none;
+  border-bottom: 1px solid #ddd;
+  font-size: 16px;
+  color: #333;
+  background-color: transparent;
+  transition: border-color 0.3s;
+}
+
+.contact-form input:focus {
+  outline: none;
+  border-color: var(--primary-color);
+}
+
+.contact-form label {
+  position: absolute;
+  left: 0;
+  top: 10px;
+  color: #777;
+}
+
+.icon-form {
+  font-size: 16px;
+  color: #777;
+  margin-right: 10px;
+}
+
+@media (max-width: 991px) {
+  .gallery-item img {
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 30px;
+  }
+
+  .experience-strip {
+    gap: 10px;
+    text-align: center;
+    justify-content: start;
+  }
+
+  .about-section {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .about-sub-title {
+    text-align: start;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .about-text {
+    text-align: start;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .form-title {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 576px) {
+  .hero-section {
+    padding-top: 120px;
+  }
+
+  .about-title {
+    font-size: 24px;
+  }
+  .about-text {
+    font-size: 16px;
+  }
+  .about-sub-title {
+    font-size: 16px;
+  }
+
+  .experience-strip {
+    gap: 10px;
+    text-align: center;
+    justify-content: start;
+  }
+  .experience-block {
+    padding: 0 10px;
+    position: relative;
+    bottom: 40px;
+  }
+
+  .experience-item {
+    justify-content: start;
+    text-align: start;
+  }
+
+  .hero-title {
+    font-size: 26px;
+  }
+
+  .about-section {
+    padding: 40px 0;
+  }
+  .contact-form-container {
+    padding: 20px 15px;
+  }
+
+  .contact-form input {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 767px) {
+  .contact-text {
+    display: none;
+  }
+
+  .contact-info-container-mobile .contact-text {
+    display: none;
+  }
+
+  .contact-info {
+    margin-right: 10px;
+    font-size: 12px;
+  }
+
+  .contact-icon {
+    width: 24px;
+    height: 24px;
+  }
+
+  .navbar-brand img {
+    height: 25px;
+  }
+}
+
+.manufacturing-section {
+  background-color: var(--dark-bg);
+  padding: 60px 0;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.manufacturing-image {
+  width: 100%;
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+.manufacturing-content {
+  text-align: left;
+  padding: 20px 0;
+}
+
+@media (min-width: 768px) {
+  .manufacturing-section {
+    padding: 80px 0;
+  }
+  .experience-strip {
+    gap: 10px;
+    margin: 0 auto;
+    max-width: 1000px;
+    padding: 15px;
+  }
+
+  .manufacturing-image {
+    max-width: 400px;
+    margin-bottom: 30px;
+  }
+
+  .manufacturing-content {
+    padding: 30px 0;
+  }
+
+  .experience-item {
+    width: 23%;
+  }
+  .experience-block {
+    position: relative;
+    bottom: 40px;
+  }
+
+  .experience-text {
+    font-size: 14px;
+  }
+}
+
+@media (min-width: 992px) {
+  .manufacturing-section .row {
+    display: flex;
+    align-items: center;
+  }
+
+  .contact-info-container {
+    justify-content: center;
+    gap: 20px;
+  }
+
+  .manufacturing-image {
+    position: absolute;
+    left: -100px;
+    top: -100px;
+    max-width: 33%;
+    margin: 0;
+  }
+
+  .manufacturing-content {
+    margin-left: 25%;
+    padding: 20px;
+  }
+
+  .experience-strip {
+    gap: 10px;
+    margin: 0 auto;
+    max-width: 1200px;
+    padding: 15px;
+  }
+
+  .experience-item {
+    width: auto;
+    margin-right: 10px;
+  }
+}
+
+.about-section .footer-contact-column:last-child {
+  margin-right: 0;
+}
+
+@media (max-width: 768px) {
+  .about-section .footer-column {
+    flex-direction: row;
+  }
+
+  .about-section .footer-contact-column {
+    width: auto;
+    margin-bottom: 0;
+    margin-right: 50px;
+  }
+
+  .about-section .footer-contact-column:first-child {
+    margin-right: 50px;
+  }
+}
+
+@media (max-width: 991px) {
+  .manufacturing-image {
+    max-width: 100%;
+    width: 100%;
+    margin: 0;
+    display: block;
+  }
+
+  .manufacturing-image img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+}
+
+@media (max-width: 768px) {
+  .manufacturing-image {
+    max-width: 100%;
+    width: 100%;
+    margin: 0;
+    display: block;
+  }
+
+  .manufacturing-image img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+}
+
+@media (max-width: 576px) {
+  .about-section .footer-column {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    width: 100%;
+    overflow-x: auto;
+    padding-bottom: 10px;
+  }
+
+  .manufacturing-image {
+    max-width: 100%;
+    width: 100vw;
+    margin: 0;
+    display: block;
+  }
+
+  .manufacturing-image img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+}
+
+@media (max-width: 1199px) {
+  .navbar-collapse {
+    text-align: center;
+    margin-top: 15px;
+  }
+
+  .navbar-nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+    max-width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .nav-item {
+    width: 100%;
+  }
+
+  .nav-link {
+    padding: 10px;
+    display: block;
+    margin: 5px 0;
+  }
+}
+
+@media (max-width: 1199px) {
+  .navbar-toggler {
+    display: block;
+  }
+
+  .navbar-expand-lg .navbar-toggler {
+    display: block;
+  }
+}
+
+.navbar-collapse.show {
+  display: block;
+}
+
+/* Измените этот медиа-запрос в вашем CSS */
+@media (max-width: 992px) {
+  .nav-link {
+    position: relative;
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding: 15px 0;
+    font-size: 18px;
+    color: var(--text-light);
+  }
+
+  .nav-link::after {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 1px;
+    background-color: #626262; /* Сіра лінія */
+  }
+}
+
+@media (max-width: 991px) {
+  .nav-link.btn {
+    background-color: transparent !important;
+    border: none !important;
+    color: var(--text-light) !important;
+  }
+
+  .nav-link.btn:hover {
+    background-color: transparent !important;
+    border-color: transparent !important;
+    color: var(--text-light) !important;
+  }
+}
+
+/* Базова іконка (бургер) */
+.navbar-toggler-icon {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.8%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100% 100%;
+}
+
+/* Коли меню відкрите — змінити іконку на хрестик */
+.navbar-collapse.show + .navbar-toggler .navbar-toggler-icon,
+.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cline x1='6' y1='6' x2='24' y2='24' stroke='white' stroke-width='2'/%3e%3cline x1='24' y1='6' x2='6' y2='24' stroke='white' stroke-width='2'/%3e%3c/svg%3e");
+}
+
+.contact-link {
+  color: inherit;
+  text-decoration: none;
+}
+.copy-tooltip {
+  visibility: hidden;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 4px 8px;
+  position: absolute;
+  z-index: 1;
+  top: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 12px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.contact-info.position-relative:hover .copy-tooltip,
+.contact-info.position-relative.show-tooltip .copy-tooltip {
+  visibility: visible;
+  opacity: 1;
+}
