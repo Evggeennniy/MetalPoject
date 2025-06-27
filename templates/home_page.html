@@ -32,7 +32,7 @@
         <nav class="navbar navbar-expand-lg navbar-dark d-none d-lg-block">
           <div class="container">
             <!-- Logo -->
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand" href="{{ url_for('home') }}">
               <img
                 src="{{ url_for('static', filename='home_page/images/logo.png') }}"
               />
@@ -164,7 +164,7 @@
             <div class="collapse navbar-collapse" id="navbarNav">
               <a
                 class="nav-link"
-                href="../home%20page/home%20page.html"
+                href="{{ url_for('home') }}"
                 aria-current="page"
                 >Головна</a
               >
